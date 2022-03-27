@@ -1,0 +1,59 @@
+class firstthread implement Runnable
+{
+thread t;
+firstthread(String name)
+{
+t = new Thread(this, name);
+t.start();
+}
+public void run()
+{
+  for(int i=1;i<=5;i++)
+  {
+  try
+  {
+    if(t.getName().equals("First Thread"))
+    {
+    Thread.sleep(1000);
+    System.out.println(t.getName()+":Hello all");
+    }
+    else if(t.getName().equals("Second Thread"))
+    {
+      Thread.sleep(2000);
+      System.out.println(t.getName()+":Hello all");
+      }
+       else if(t.getName().equals("Third Thread"))
+       {
+      Thread.sleep(3000);
+      System.out.println(t.getName()+":Hello all");
+      }
+       else if(t.getName().equals("fourth Thread"))
+      {
+      Thread.sleep(4000);
+      System.out.println(t.getName()+":Hello all");
+      }
+      else
+      {
+      Thread.sleep(5000);
+      System.out.println(t.getName()+:"Hello all");
+      }
+     }
+     catch(InterruptedException e)
+     {
+     System.out.println(t.getName()+" is interrupted");
+     }
+     }
+   }
+}
+class FiveThread
+  {
+  public static void main(String args[])
+  {
+  firstthread one = new firstthread("1st thread");
+  firstthread Second = new firstthread("2nd thread");
+  firstthread three = new firstthread("3rd thread");
+  firstthread four = new firstthread("4th thread");
+  firstthread five = new firstthread("5th thread");
+  }
+  }
+    
